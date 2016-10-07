@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CotizaYaDesktop.Properties
+namespace CotizaYA_00.Properties
 {
 
 
