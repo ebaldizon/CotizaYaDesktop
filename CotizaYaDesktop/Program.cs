@@ -16,7 +16,7 @@ namespace CotizaYA_00
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CotizaYa());
+            Application.Run(new Cotizador());
         }
     }
 }
