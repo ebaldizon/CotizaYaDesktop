@@ -12,6 +12,8 @@ namespace CotizaYA_00
 {
     public partial class Cotizador : Form
     {
+        InvoiceAdmin invoiceAdmin;
+
         public Cotizador()
         {
             InitializeComponent();
@@ -21,12 +23,12 @@ namespace CotizaYA_00
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            InvoiceAdmin invoiceAdmin = new InvoiceAdmin(txtName.Text, txtAddress.Text, dtpDate.Value, Int32.Parse(txtNumInvoice.Text), dtgwProducts);
+            invoiceAdmin = new InvoiceAdmin(txtName.Text, txtAddress.Text, dtpDate.Value, Int32.Parse(txtNumInvoice.Text), dtgwProducts);
             invoiceAdmin.calculateInvoice();
 
-            txtSubTotal.Text = invoiceAdmin.invoice.SubTotal.ToString();
-            txtTax.Text = invoiceAdmin.invoice.Tax.ToString();
-            txtTotal.Text = invoiceAdmin.invoice.Total.ToString();
+           this.txtSubTotal.Text = invoiceAdmin.invoice.SubTotal.ToString();
+           this.txtTax.Text = invoiceAdmin.invoice.Tax.ToString();
+           this.txtTotal.Text = invoiceAdmin.invoice.Total.ToString();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace CotizaYA_00
             DialogResult dialogResult = MessageBox.Show("¿Desea enviar la cotización por correo?", "CotizaYA", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //
+                invoiceAdmin.fillWord();
             }
             
         }
