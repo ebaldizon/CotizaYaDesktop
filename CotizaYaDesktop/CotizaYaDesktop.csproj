@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,13 @@
     <Compile Include="Cotizador.Designer.cs">
       <DependentUpon>Cotizador.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmailAdmin.cs" />
+    <Compile Include="FrmEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmail.Designer.cs">
+      <DependentUpon>FrmEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceAdmin.cs" />
     <Compile Include="Program.cs" />
@@ -59,6 +67,9 @@
     <Compile Include="WordAdmin.cs" />
     <EmbeddedResource Include="Cotizador.resx">
       <DependentUpon>Cotizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmail.resx">
+      <DependentUpon>FrmEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

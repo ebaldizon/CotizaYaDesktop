@@ -27,7 +27,16 @@ namespace CotizaYA_00
             createRefObj("tax", ObjMiss, ObjWord, parametro);
             createRefObj("total", ObjMiss, ObjWord, parametro);
             fillTable(ObjMiss, ObjWord, parametro);
-            ObjWord.Visible = true;
+
+            try
+            {
+                ObjWord.Visible = true;
+            }
+            catch(Exception e)
+            {
+                e.ToString();
+            }
+            
         }
 
         public void createRefObj(string name, object ObjMiss, Word.Application ObjWord, object parameter)
@@ -96,6 +105,7 @@ namespace CotizaYA_00
             }
         }
 
+        //Boomarks empleados en el word, en este caso total hay 4 columnas con 23 filas cada uno
         public string getMatrixBookMark(int i, int j)
         {
             if(j == 0)

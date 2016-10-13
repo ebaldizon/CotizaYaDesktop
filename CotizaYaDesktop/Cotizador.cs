@@ -13,12 +13,14 @@ namespace CotizaYA_00
     public partial class Cotizador : Form
     {
         InvoiceAdmin invoiceAdmin;
+        bool calculate;
 
         public Cotizador()
         {
             InitializeComponent();
             this.dtgwProducts.RowCount = 23;
             this.Text = "CotizaYa";
+            this.calculate = false;
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -29,17 +31,91 @@ namespace CotizaYA_00
            this.txtSubTotal.Text = invoiceAdmin.invoice.SubTotal.ToString();
            this.txtTax.Text = invoiceAdmin.invoice.Tax.ToString();
            this.txtTotal.Text = invoiceAdmin.invoice.Total.ToString();
+           this.calculate = true;
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("¿Desea enviar la cotización por correo?", "CotizaYA", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            FrmEmail frmE = new FrmEmail();
+            frmE.Show();
+            /*if (allValidators())
+            {*/
+            //Email emailAdmin = new Email("corporacionbalry@gmail.com","casa123456","emanuel.baldizon@gmail.com", "corporacionbalry@gmail.com", "asunto","asdasdasd");
+            //}
+        }
+
+        private void btnWord_Click(object sender, EventArgs e)
+        {
+            if (allValidators())
             {
                 invoiceAdmin.fillWord();
             }
-            
         }
+
+        private bool validate_txtName()
+        {
+            if(txtName.Text == "")
+            {
+                lblError.Text = "* Hace falta rellenar el campo Nombre";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validate_txtAddress()
+        {
+            if (txtAddress.Text == "")
+            {
+                lblError.Text = "* Hace falta rellenar el campo Ubicacion";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validate_txtNumInvoice()
+        {
+            if (txtNumInvoice.Text == "")
+            {
+                lblError.Text = "* Hace falta rellenar el campo Factura Nº";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validate_calculate()
+        {
+            if(this.calculate)
+            {
+                return true;
+            }
+            else
+            {
+                lblError.Text = "* Se necesita calcular.";
+                return false;
+            }
+        }
+
+        private bool allValidators()
+        {
+            if(validate_txtName() && validate_txtAddress() && validate_txtNumInvoice() && validate_calculate())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
     
 }
