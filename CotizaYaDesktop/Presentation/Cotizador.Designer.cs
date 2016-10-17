@@ -120,6 +120,7 @@
             this.btnPDF.TabIndex = 11;
             this.btnPDF.Text = "Crear  PDF";
             this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // btnImprimir
             // 

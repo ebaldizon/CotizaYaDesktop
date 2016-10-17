@@ -47,6 +47,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblFile = new System.Windows.Forms.Label();
             this.Setting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,11 +227,35 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Usuario:";
             // 
+            // btnFile
+            // 
+            this.btnFile.Location = new System.Drawing.Point(110, 434);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(90, 23);
+            this.btnFile.TabIndex = 10;
+            this.btnFile.Text = "Adjuntar";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // lblFile
+            // 
+            this.lblFile.AutoSize = true;
+            this.lblFile.Location = new System.Drawing.Point(110, 464);
+            this.lblFile.Name = "lblFile";
+            this.lblFile.Size = new System.Drawing.Size(0, 13);
+            this.lblFile.TabIndex = 11;
+            // 
             // FrmEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 455);
+            this.ClientSize = new System.Drawing.Size(584, 519);
+            this.Controls.Add(this.lblFile);
+            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.Setting);
             this.Controls.Add(this.rtxtMessage);
             this.Controls.Add(this.txtCC);
@@ -268,5 +295,8 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblFile;
     }
 }

@@ -47,28 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cotizador.cs">
+    <Compile Include="Business\PDFAdmin.cs" />
+    <Compile Include="Presentation\Cotizador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cotizador.Designer.cs">
+    <Compile Include="Presentation\Cotizador.Designer.cs">
       <DependentUpon>Cotizador.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmailAdmin.cs" />
-    <Compile Include="FrmEmail.cs">
+    <Compile Include="Business\EmailAdmin.cs" />
+    <Compile Include="Presentation\FrmEmail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmail.Designer.cs">
+    <Compile Include="Presentation\FrmEmail.Designer.cs">
       <DependentUpon>FrmEmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoice.cs" />
-    <Compile Include="InvoiceAdmin.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Business\InvoiceAdmin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordAdmin.cs" />
-    <EmbeddedResource Include="Cotizador.resx">
+    <Compile Include="Business\WordAdmin.cs" />
+    <EmbeddedResource Include="Presentation\Cotizador.resx">
       <DependentUpon>Cotizador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmail.resx">
+    <EmbeddedResource Include="Presentation\FrmEmail.resx">
       <DependentUpon>FrmEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,7 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IMG\" />
+    <Folder Include="Data\" />
+    <Folder Include="Presentation\IMG\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

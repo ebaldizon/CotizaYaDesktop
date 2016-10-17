@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Word = Microsoft.Office.Interop.Word;
+using Microsoft.Office.Interop.Word;
+
 
 namespace CotizaYA_00
 {
@@ -14,7 +16,7 @@ namespace CotizaYA_00
         public void fillWord()
         {
             object ObjMiss = System.Reflection.Missing.Value;
-            Word.Application ObjWord = new Word.Application();
+            Microsoft.Office.Interop.Word.Application ObjWord = new Microsoft.Office.Interop.Word.Application();
             //string ruta = Application.StartupPath + @"\documento.docx";
             string ruta = "F:\\BALRY.docx";
             object parametro = ruta;
@@ -39,14 +41,14 @@ namespace CotizaYA_00
             
         }
 
-        public void createRefObj(string name, object ObjMiss, Word.Application ObjWord, object parameter)
+        public void createRefObj(string name, object ObjMiss, Microsoft.Office.Interop.Word.Application ObjWord, object parameter)
         {
             try
             {
                 object nameObj = name;
-                Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
+                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
 
-                Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
+                Microsoft.Office.Interop.Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
                 nameRange.Text = getInvoiceAttribute(name);
 
                 object refObjName = nameRange;
@@ -58,15 +60,15 @@ namespace CotizaYA_00
             }
         }
 
-        public void createRefObjMatrix(int i, int j, object ObjMiss, Word.Application ObjWord, object parameter)
+        public void createRefObjMatrix(int i, int j, object ObjMiss, Microsoft.Office.Interop.Word.Application ObjWord, object parameter)
         {
             try { 
             
                 string name = getMatrixBookMark(i, j);
                 object nameObj = name;
-                Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
+                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
 
-                Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
+                Microsoft.Office.Interop.Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
                 nameRange.Text = getField(i,j);
 
                 object refObjName = nameRange;
@@ -80,21 +82,13 @@ namespace CotizaYA_00
 
         public string getField(int i, int j)
         {
-            if(this.invoice.QuotedList[i, j].ToString() != null)
-            {
+            if (this.invoice.QuotedList[i, j].ToString() != null)
                 return this.invoice.QuotedList[i, j].ToString();
-            }
-            else if(this.invoice.QuotedList[i, j].ToString() == "")
-            {
-                return "---";
-            }
             else
-            {
-                return "NR";
-            }
+                return "";
         }
 
-        public void fillTable(object ObjMiss, Word.Application ObjWord, object parameter)
+        public void fillTable(object ObjMiss, Microsoft.Office.Interop.Word.Application ObjWord, object parameter)
         {
             for(int f=0; f<23; f++)
             {
@@ -109,59 +103,40 @@ namespace CotizaYA_00
         public string getMatrixBookMark(int i, int j)
         {
             if(j == 0)
-            {
                 return "cod" + i;
-            }
             else if(j == 1)
-            {
                 return "description" + i;
-            }
             else if(j == 2)
-            {
                 return "q" + i;
-            }
             else if(j == 3)
-            {
                 return "price" + i;
-            }
             return "";
         }
         
         public string getInvoiceAttribute(string attribute)
         {
             if(attribute == "name")
-            {
                 return this.invoice.Name;
-            }
             else if(attribute == "address")
-            {
                 return this.invoice.Address;
-            }
             else if(attribute == "date")
-            {
                 return this.invoice.Date.ToString();
-            }
             else if (attribute == "number")
-            {
                 return this.invoice.Number.ToString();
-            }
             else if(attribute == "subtotal")
-            {
                 return this.invoice.SubTotal.ToString();
-            }
             else if(attribute == "tax")
-            {
                 return this.invoice.Tax.ToString();
-            }
             else if(attribute == "total")
-            {
                 return this.invoice.Total.ToString();
-            }
             else
-            {
                 return "";
-            }
         }
+
+
+        
+
+
 
 
     }

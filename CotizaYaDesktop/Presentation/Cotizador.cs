@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CotizaYA_00
 {
     public partial class Cotizador : Form
@@ -115,6 +116,13 @@ namespace CotizaYA_00
                 return false;
             }
         }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
 
     }
     
