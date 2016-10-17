@@ -39,10 +39,6 @@ namespace CotizaYA_00
         {
             FrmEmail frmE = new FrmEmail();
             frmE.Show();
-            /*if (allValidators())
-            {*/
-            //Email emailAdmin = new Email("corporacionbalry@gmail.com","casa123456","emanuel.baldizon@gmail.com", "corporacionbalry@gmail.com", "asunto","asdasdasd");
-            //}
         }
 
         private void btnWord_Click(object sender, EventArgs e)
