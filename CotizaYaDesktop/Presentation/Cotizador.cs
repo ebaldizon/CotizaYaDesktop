@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CotizaYA_00.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,12 +38,42 @@ namespace CotizaYA_00
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            FrmEmail frmE = new FrmEmail();
-            frmE.Show();
-            /*if (allValidators())
-            {*/
-            //Email emailAdmin = new Email("corporacionbalry@gmail.com","casa123456","emanuel.baldizon@gmail.com", "corporacionbalry@gmail.com", "asunto","asdasdasd");
-            //}
+            if(crearPDF() == true)
+            {
+                FrmEmail frmE = new FrmEmail();
+                frmE.Show();
+            }
+        }
+
+        public bool crearPDF()
+        {
+            if (allValidators())
+            {
+                if (this.invoiceAdmin.wordToPDF())
+                {
+                    MessageBox.Show("El PDF se ha creado exitosamente", "CotizaYa");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo crear el PDF");
+                    return false;
+                }
+            }
+            return false;
+        }
+
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            if (allValidators())
+            {
+                if (this.invoiceAdmin.wordToPDF())
+                    MessageBox.Show("El PDF se ha creado exitosamente", "CotizaYa");
+                else
+                    MessageBox.Show("No se pudo crear el PDF");
+            }
+                
         }
 
         private void btnWord_Click(object sender, EventArgs e)
@@ -117,10 +148,6 @@ namespace CotizaYA_00
             }
         }
 
-        private void btnPDF_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         
 

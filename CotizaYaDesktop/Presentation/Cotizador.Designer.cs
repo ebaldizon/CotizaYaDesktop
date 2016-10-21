@@ -57,6 +57,7 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgwProducts)).BeginInit();
@@ -336,6 +337,10 @@
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Nombre:";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Cotizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,5 +392,6 @@
         private System.Windows.Forms.Button btnPlantillas;
         private System.Windows.Forms.Button btnWord;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

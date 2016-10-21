@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CotizaYA_00.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,22 @@ namespace CotizaYA_00
         public Invoice invoice { get; set; }
         public DataGridView dataGW { get; set; }
         public WordAdmin wordAdmin { get; set; }
+        public bool WordEstate { get; set; }
+
+        public PDFAdmin pdfAdmin { get; set; }
 
         public InvoiceAdmin(string name, string address, DateTime date, int number, DataGridView dgw)
         {
             invoice = new Invoice();
             wordAdmin = new WordAdmin();
+            pdfAdmin = new PDFAdmin();
             this.dataGW = dgw;
             this.invoice.Name = name;
             this.invoice.Address = address;
             this.invoice.Date = date;
             this.invoice.Number = number;
             this.DataGridViewToMatrix();
+            this.WordEstate = false;
         }
 
         private double calculateSubTotal()
@@ -52,10 +58,22 @@ namespace CotizaYA_00
             this.invoice.calculateAll();
         }
 
-        public void fillWord()
+        public bool fillWord()
         {
-            wordAdmin.invoice = this.invoice;
-            wordAdmin.fillWord();
+            this.wordAdmin.invoice = this.invoice;
+            this.wordAdmin.fillWord();
+            this.WordEstate = true;
+            return true;
+        }
+
+        public bool wordToPDF()
+        {
+            if(this.WordEstate == false)
+            {
+                fillWord();
+            }
+
+            return this.pdfAdmin.WordToPDF("F:\\DOCUMENTBALRY.docx", "F:\\myDocument.pdf");
         }
 
         public void DataGridViewToMatrix()
@@ -82,6 +100,8 @@ namespace CotizaYA_00
                 e.ToString();
             }
         }
+
+
 
         /*
          try
