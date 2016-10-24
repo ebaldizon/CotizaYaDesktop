@@ -30,11 +30,6 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnWord = new System.Windows.Forms.Button();
-            this.btnPlantillas = new System.Windows.Forms.Button();
-            this.btnPDF = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnCorreo = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -58,6 +53,10 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnWord = new System.Windows.Forms.Button();
+            this.btnPDF = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCorreo = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgwProducts)).BeginInit();
@@ -68,7 +67,6 @@
             // 
             this.panel3.Controls.Add(this.lblError);
             this.panel3.Controls.Add(this.btnWord);
-            this.panel3.Controls.Add(this.btnPlantillas);
             this.panel3.Controls.Add(this.btnPDF);
             this.panel3.Controls.Add(this.btnImprimir);
             this.panel3.Controls.Add(this.btnCorreo);
@@ -94,59 +92,11 @@
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 14;
             // 
-            // btnWord
-            // 
-            this.btnWord.Location = new System.Drawing.Point(489, 51);
-            this.btnWord.Name = "btnWord";
-            this.btnWord.Size = new System.Drawing.Size(119, 23);
-            this.btnWord.TabIndex = 13;
-            this.btnWord.Text = "Crear Word";
-            this.btnWord.UseVisualStyleBackColor = true;
-            this.btnWord.Click += new System.EventHandler(this.btnWord_Click);
-            // 
-            // btnPlantillas
-            // 
-            this.btnPlantillas.Location = new System.Drawing.Point(489, 22);
-            this.btnPlantillas.Name = "btnPlantillas";
-            this.btnPlantillas.Size = new System.Drawing.Size(119, 23);
-            this.btnPlantillas.TabIndex = 12;
-            this.btnPlantillas.Text = "Plantillas";
-            this.btnPlantillas.UseVisualStyleBackColor = true;
-            // 
-            // btnPDF
-            // 
-            this.btnPDF.Location = new System.Drawing.Point(351, 74);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(119, 23);
-            this.btnPDF.TabIndex = 11;
-            this.btnPDF.Text = "Crear  PDF";
-            this.btnPDF.UseVisualStyleBackColor = true;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(351, 48);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(119, 23);
-            this.btnImprimir.TabIndex = 10;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // btnCorreo
-            // 
-            this.btnCorreo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCorreo.Location = new System.Drawing.Point(351, 22);
-            this.btnCorreo.Name = "btnCorreo";
-            this.btnCorreo.Size = new System.Drawing.Size(119, 23);
-            this.btnCorreo.TabIndex = 9;
-            this.btnCorreo.Text = "Enviar por correo";
-            this.btnCorreo.UseVisualStyleBackColor = true;
-            this.btnCorreo.Click += new System.EventHandler(this.btnEnviar_Click);
-            // 
             // btnCalcular
             // 
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCalcular.Location = new System.Drawing.Point(72, 114);
+            this.btnCalcular.Location = new System.Drawing.Point(196, 114);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 8;
@@ -341,6 +291,50 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnWord
+            // 
+            this.btnWord.BackgroundImage = global::CotizaYA_00.Properties.Resources.Word_icon;
+            this.btnWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnWord.Location = new System.Drawing.Point(327, 29);
+            this.btnWord.Name = "btnWord";
+            this.btnWord.Size = new System.Drawing.Size(59, 58);
+            this.btnWord.TabIndex = 13;
+            this.btnWord.UseVisualStyleBackColor = true;
+            this.btnWord.Click += new System.EventHandler(this.btnWord_Click);
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.BackgroundImage = global::CotizaYA_00.Properties.Resources.basic1_046_file_pdf_512;
+            this.btnPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPDF.Location = new System.Drawing.Point(392, 28);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(59, 59);
+            this.btnPDF.TabIndex = 11;
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackgroundImage = global::CotizaYA_00.Properties.Resources.printer_icon;
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.Location = new System.Drawing.Point(457, 28);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(59, 58);
+            this.btnImprimir.TabIndex = 10;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
+            // btnCorreo
+            // 
+            this.btnCorreo.BackgroundImage = global::CotizaYA_00.Properties.Resources.email_send;
+            this.btnCorreo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCorreo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCorreo.Location = new System.Drawing.Point(522, 28);
+            this.btnCorreo.Name = "btnCorreo";
+            this.btnCorreo.Size = new System.Drawing.Size(59, 58);
+            this.btnCorreo.TabIndex = 9;
+            this.btnCorreo.UseVisualStyleBackColor = true;
+            this.btnCorreo.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
             // Cotizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +383,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnPDF;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnPlantillas;
         private System.Windows.Forms.Button btnWord;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

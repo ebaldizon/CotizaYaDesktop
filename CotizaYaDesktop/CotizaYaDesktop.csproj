@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Presentation\IMG\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -126,6 +126,24 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\Word-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\basic1-046_file_pdf-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\email_send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\printer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\template-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\IMG\calculator-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

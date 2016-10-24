@@ -38,11 +38,8 @@ namespace CotizaYA_00
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            if(crearPDF() == true)
-            {
-                FrmEmail frmE = new FrmEmail();
-                frmE.Show();
-            }
+            FrmEmail frmE = new FrmEmail();
+            frmE.Show();
         }
 
         public bool crearPDF()

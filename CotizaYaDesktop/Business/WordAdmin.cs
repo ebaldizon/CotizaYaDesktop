@@ -142,7 +142,7 @@ namespace CotizaYA_00
             else if (attribute == "address")
                 return this.invoice.Address;
             else if (attribute == "date")
-                return this.invoice.Date.ToString();
+                return this.invoice.Date.ToString("dd/MM/yyyy");
             else if (attribute == "number")
                 return this.invoice.Number.ToString();
             else if (attribute == "subtotal")
