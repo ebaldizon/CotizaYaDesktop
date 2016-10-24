@@ -76,6 +76,16 @@ namespace CotizaYA_00
             return this.pdfAdmin.WordToPDF("F:\\DOCUMENTBALRY.docx", "F:\\myDocument.pdf");
         }
 
+        public bool printWord()
+        {
+            if(this.WordEstate == true)
+            {
+                this.wordAdmin.print();
+                return true;
+            }
+            return false;
+        }
+
         public void DataGridViewToMatrix()
         {
             try

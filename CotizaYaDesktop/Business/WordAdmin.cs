@@ -37,7 +37,7 @@ namespace CotizaYA_00
                 //string ruta = Application.StartupPath + @"\documento.docx";
 
                 object parametro = this.PathWord;
-                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parametro, ObjMiss);
+                Microsoft.Office.Interop.Word.Document ObjDoc  = ObjWord.Documents.Open(parametro, ObjMiss);
 
                 createRefObj("name", ObjMiss, ObjWord, parametro);
                 createRefObj("address", ObjMiss, ObjWord, parametro);
@@ -153,6 +153,25 @@ namespace CotizaYA_00
                 return this.invoice.Total.ToString();
             else
                 return "";
+        }
+
+        public void print()
+        {
+            try
+            {
+                if(WordCreated == true)
+                {
+                    object ObjMiss = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Word.Application ObjWord = new Microsoft.Office.Interop.Word.Application();
+                    object parametro = "F:\\DOCUMENTBALRY.docx";
+                    Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parametro, ObjMiss);
+                    ObjDoc.PrintOut();
+                }
+            }
+            catch(Exception e)
+            {
+                e.ToString();
+            }
         }
 
     }

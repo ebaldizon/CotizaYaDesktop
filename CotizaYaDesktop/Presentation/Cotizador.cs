@@ -81,6 +81,15 @@ namespace CotizaYA_00
             }
         }
 
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (allValidators())
+            {
+                invoiceAdmin.printWord();
+            }
+        }
+
         private bool validate_txtName()
         {
             if(txtName.Text == "")
@@ -144,9 +153,6 @@ namespace CotizaYA_00
                 return false;
             }
         }
-
-
-        
 
     }
     
