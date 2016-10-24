@@ -19,6 +19,10 @@ namespace CotizaYA_00
 
         public bool WordCreated { get; set; }
 
+        public Microsoft.Office.Interop.Word.Document wordDocument { get; set; }
+
+        public Microsoft.Office.Interop.Word.Application appWord { get; set; }
+
         public WordAdmin()
         {
             this.PathGlobal = "F:\\";
@@ -32,26 +36,28 @@ namespace CotizaYA_00
             try
             {
                 object ObjMiss = System.Reflection.Missing.Value;
-                Microsoft.Office.Interop.Word.Application ObjWord = new Microsoft.Office.Interop.Word.Application();
+                this.appWord = new Microsoft.Office.Interop.Word.Application();
                 
                 //string ruta = Application.StartupPath + @"\documento.docx";
 
                 object parametro = this.PathWord;
-                Microsoft.Office.Interop.Word.Document ObjDoc  = ObjWord.Documents.Open(parametro, ObjMiss);
+                this.wordDocument  = appWord.Documents.Open(parametro, ObjMiss);
+                appWord.Visible = false;
 
-                createRefObj("name", ObjMiss, ObjWord, parametro);
-                createRefObj("address", ObjMiss, ObjWord, parametro);
-                createRefObj("date", ObjMiss, ObjWord, parametro);
-                createRefObj("number", ObjMiss, ObjWord, parametro);
-                createRefObj("subtotal", ObjMiss, ObjWord, parametro);
-                createRefObj("tax", ObjMiss, ObjWord, parametro);
-                createRefObj("total", ObjMiss, ObjWord, parametro);
-                fillTable(ObjMiss, ObjWord, parametro);
+                createRefObj("name", ObjMiss, appWord, parametro);
+                createRefObj("address", ObjMiss, appWord, parametro);
+                createRefObj("date", ObjMiss, appWord, parametro);
+                createRefObj("number", ObjMiss, appWord, parametro);
+                createRefObj("subtotal", ObjMiss, appWord, parametro);
+                createRefObj("tax", ObjMiss, appWord, parametro);
+                createRefObj("total", ObjMiss, appWord, parametro);
+                fillTable(ObjMiss, appWord, parametro);
                 
          
-                ObjWord.Visible = false;
+                
                 this.WordCreated = true;
-                ObjDoc.SaveAs2("F:\\DOCUMENTBALRY.docx");
+                wordDocument.SaveAs2("F:\\DOCUMENTBALRY.docx");
+                wordDocument.Close();
                 return true;
             }
             catch (Exception e)
@@ -67,13 +73,12 @@ namespace CotizaYA_00
             try
             {
                 object nameObj = name;
-                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
 
-                Microsoft.Office.Interop.Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
+                Microsoft.Office.Interop.Word.Range nameRange = this.wordDocument.Bookmarks.get_Item(ref nameObj).Range;
                 nameRange.Text = getInvoiceAttribute(name);
 
                 object refObjName = nameRange;
-                ObjDoc.Bookmarks.Add(name, ref refObjName);
+                this.wordDocument.Bookmarks.Add(name, ref refObjName);
             }
             catch (Exception e)
             {
@@ -85,16 +90,14 @@ namespace CotizaYA_00
         {
             try
             {
-
                 string name = getMatrixBookMark(i, j);
                 object nameObj = name;
-                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parameter, ObjMiss);
 
-                Microsoft.Office.Interop.Word.Range nameRange = ObjDoc.Bookmarks.get_Item(ref nameObj).Range;
+                Microsoft.Office.Interop.Word.Range nameRange = this.wordDocument.Bookmarks.get_Item(ref nameObj).Range;
                 nameRange.Text = getField(i, j);
 
                 object refObjName = nameRange;
-                ObjDoc.Bookmarks.Add(name, ref refObjName);
+                this.wordDocument.Bookmarks.Add(name, ref refObjName);
             }
             catch (Exception e)
             {
@@ -159,14 +162,16 @@ namespace CotizaYA_00
         {
             try
             {
-                if(WordCreated == true)
+                if(WordCreated == false)
                 {
-                    object ObjMiss = System.Reflection.Missing.Value;
-                    Microsoft.Office.Interop.Word.Application ObjWord = new Microsoft.Office.Interop.Word.Application();
-                    object parametro = "F:\\DOCUMENTBALRY.docx";
-                    Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parametro, ObjMiss);
-                    ObjDoc.PrintOut();
+                    fillWord();
                 }
+
+                object ObjMiss = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Application ObjWord = new Microsoft.Office.Interop.Word.Application();
+                object parametro = "F:\\DOCUMENTBALRY.docx";
+                Microsoft.Office.Interop.Word.Document ObjDoc = ObjWord.Documents.Open(parametro, ObjMiss);
+                ObjDoc.PrintOut();
             }
             catch(Exception e)
             {

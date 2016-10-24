@@ -9,17 +9,16 @@ namespace CotizaYA_00.Business
 {
     class PDFAdmin
     {
-        public Microsoft.Office.Interop.Word.Document wordDocument { get; set; }
         public string WordFilter = "Word Files(.docx)|*.docx|All Files(*.*)|*.*";
         public string PDFFilter = "PDF Files(.pdf)|*.pdf|All Files(*.*)|*.*";
-        public bool WordToPDF(string pathWord, string pathPDF)
+        public bool WordToPDF(string pathWord, string pathPDF, Microsoft.Office.Interop.Word.Document wordDocument, Microsoft.Office.Interop.Word.Application appWord)
         {
-            Microsoft.Office.Interop.Word.Application appWord = new Microsoft.Office.Interop.Word.Application();
             try
             {
                 wordDocument = appWord.Documents.Open(@pathWord);
                 
                 wordDocument.ExportAsFixedFormat(@pathPDF, WdExportFormat.wdExportFormatPDF);
+                wordDocument.Close();
                 return true;
             }
             catch(Exception e)

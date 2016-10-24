@@ -73,7 +73,7 @@ namespace CotizaYA_00
                 fillWord();
             }
 
-            return this.pdfAdmin.WordToPDF("F:\\DOCUMENTBALRY.docx", "F:\\myDocument.pdf");
+            return this.pdfAdmin.WordToPDF("F:\\DOCUMENTBALRY.docx", "F:\\myDocument.pdf", wordAdmin.wordDocument, wordAdmin.appWord);
         }
 
         public bool printWord()

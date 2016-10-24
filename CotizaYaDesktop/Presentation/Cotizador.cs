@@ -77,7 +77,14 @@ namespace CotizaYA_00
         {
             if (allValidators())
             {
-                invoiceAdmin.fillWord();
+                if(invoiceAdmin.fillWord())
+                {
+                    MessageBox.Show("Documento Word creado exitosamente","CotizaYa");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo crear el documento en Word", "CotizaYa");
+                }
             }
         }
 
@@ -154,6 +161,10 @@ namespace CotizaYA_00
             }
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }
