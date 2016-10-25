@@ -1,4 +1,5 @@
 ﻿using CotizaYA_00.Business;
+using CotizaYA_00.Presentation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,6 +165,12 @@ namespace CotizaYA_00
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
     }
     

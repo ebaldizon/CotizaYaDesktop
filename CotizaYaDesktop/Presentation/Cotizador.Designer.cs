@@ -53,12 +53,19 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSearchProduct = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.rbtnCompra = new System.Windows.Forms.RadioButton();
+            this.rbtnCotización = new System.Windows.Forms.RadioButton();
+            this.btnOpenPDF = new System.Windows.Forms.Button();
+            this.btnOpenWord = new System.Windows.Forms.Button();
             this.btnWord = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnCorreo = new System.Windows.Forms.Button();
-            this.btnOpenWord = new System.Windows.Forms.Button();
-            this.btnOpenPDF = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgwProducts)).BeginInit();
@@ -67,13 +74,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnOpenPDF);
-            this.panel3.Controls.Add(this.btnOpenWord);
-            this.panel3.Controls.Add(this.lblError);
-            this.panel3.Controls.Add(this.btnWord);
-            this.panel3.Controls.Add(this.btnPDF);
-            this.panel3.Controls.Add(this.btnImprimir);
-            this.panel3.Controls.Add(this.btnCorreo);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.btnCalcular);
             this.panel3.Controls.Add(this.txtTotal);
             this.panel3.Controls.Add(this.lblTotal);
@@ -81,9 +82,9 @@
             this.panel3.Controls.Add(this.txtSubTotal);
             this.panel3.Controls.Add(this.lblTax);
             this.panel3.Controls.Add(this.lblSubTotal);
-            this.panel3.Location = new System.Drawing.Point(46, 510);
+            this.panel3.Location = new System.Drawing.Point(53, 501);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(626, 163);
+            this.panel3.Size = new System.Drawing.Size(303, 163);
             this.panel3.TabIndex = 10;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -92,13 +93,14 @@
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(353, 124);
+            this.lblError.Location = new System.Drawing.Point(432, 615);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 14;
             // 
             // btnCalcular
             // 
+            this.btnCalcular.BackColor = System.Drawing.Color.White;
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCalcular.Location = new System.Drawing.Point(196, 114);
@@ -106,7 +108,7 @@
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 8;
             this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // txtTotal
@@ -166,7 +168,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dtgwProducts);
-            this.panel2.Location = new System.Drawing.Point(46, 162);
+            this.panel2.Location = new System.Drawing.Point(53, 144);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(626, 341);
             this.panel2.TabIndex = 9;
@@ -209,7 +211,10 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.rbtnCotización);
             this.panel1.Controls.Add(this.txtNumInvoice);
+            this.panel1.Controls.Add(this.rbtnCompra);
             this.panel1.Controls.Add(this.lblNumber);
             this.panel1.Controls.Add(this.dtpDate);
             this.panel1.Controls.Add(this.lblDate);
@@ -217,9 +222,9 @@
             this.panel1.Controls.Add(this.lblAddress);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.lblName);
-            this.panel1.Location = new System.Drawing.Point(46, 74);
+            this.panel1.Location = new System.Drawing.Point(53, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(626, 81);
+            this.panel1.Size = new System.Drawing.Size(800, 81);
             this.panel1.TabIndex = 8;
             // 
             // txtNumInvoice
@@ -296,11 +301,86 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.Location = new System.Drawing.Point(713, 148);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(94, 23);
+            this.btnSearchProduct.TabIndex = 11;
+            this.btnSearchProduct.Text = "Buscar producto";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(713, 206);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(140, 251);
+            this.listBox1.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(713, 177);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(713, 466);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(61, 23);
+            this.btnAddProduct.TabIndex = 14;
+            this.btnAddProduct.Text = "Agregar";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCompra
+            // 
+            this.rbtnCompra.AutoSize = true;
+            this.rbtnCompra.Location = new System.Drawing.Point(660, 10);
+            this.rbtnCompra.Name = "rbtnCompra";
+            this.rbtnCompra.Size = new System.Drawing.Size(61, 17);
+            this.rbtnCompra.TabIndex = 15;
+            this.rbtnCompra.TabStop = true;
+            this.rbtnCompra.Text = "Compra";
+            this.rbtnCompra.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCotización
+            // 
+            this.rbtnCotización.AutoSize = true;
+            this.rbtnCotización.Location = new System.Drawing.Point(660, 45);
+            this.rbtnCotización.Name = "rbtnCotización";
+            this.rbtnCotización.Size = new System.Drawing.Size(74, 17);
+            this.rbtnCotización.TabIndex = 16;
+            this.rbtnCotización.TabStop = true;
+            this.rbtnCotización.Text = "Cotización";
+            this.rbtnCotización.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenPDF
+            // 
+            this.btnOpenPDF.BackgroundImage = global::CotizaYA_00.Properties.Resources.open_arrow_icon;
+            this.btnOpenPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenPDF.Location = new System.Drawing.Point(496, 583);
+            this.btnOpenPDF.Name = "btnOpenPDF";
+            this.btnOpenPDF.Size = new System.Drawing.Size(37, 29);
+            this.btnOpenPDF.TabIndex = 16;
+            this.btnOpenPDF.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenWord
+            // 
+            this.btnOpenWord.BackgroundImage = global::CotizaYA_00.Properties.Resources.open_arrow_icon;
+            this.btnOpenWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenWord.Location = new System.Drawing.Point(430, 583);
+            this.btnOpenWord.Name = "btnOpenWord";
+            this.btnOpenWord.Size = new System.Drawing.Size(37, 29);
+            this.btnOpenWord.TabIndex = 15;
+            this.btnOpenWord.UseVisualStyleBackColor = true;
+            // 
             // btnWord
             // 
             this.btnWord.BackgroundImage = global::CotizaYA_00.Properties.Resources.Word_icon;
             this.btnWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnWord.Location = new System.Drawing.Point(340, 32);
+            this.btnWord.Location = new System.Drawing.Point(419, 523);
             this.btnWord.Name = "btnWord";
             this.btnWord.Size = new System.Drawing.Size(59, 58);
             this.btnWord.TabIndex = 13;
@@ -311,7 +391,7 @@
             // 
             this.btnPDF.BackgroundImage = global::CotizaYA_00.Properties.Resources.basic1_046_file_pdf_512;
             this.btnPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPDF.Location = new System.Drawing.Point(405, 31);
+            this.btnPDF.Location = new System.Drawing.Point(484, 522);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(59, 59);
             this.btnPDF.TabIndex = 11;
@@ -322,7 +402,7 @@
             // 
             this.btnImprimir.BackgroundImage = global::CotizaYA_00.Properties.Resources.printer_icon;
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImprimir.Location = new System.Drawing.Point(470, 31);
+            this.btnImprimir.Location = new System.Drawing.Point(549, 522);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(59, 58);
             this.btnImprimir.TabIndex = 10;
@@ -334,39 +414,41 @@
             this.btnCorreo.BackgroundImage = global::CotizaYA_00.Properties.Resources.email_send;
             this.btnCorreo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCorreo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCorreo.Location = new System.Drawing.Point(535, 31);
+            this.btnCorreo.Location = new System.Drawing.Point(614, 522);
             this.btnCorreo.Name = "btnCorreo";
             this.btnCorreo.Size = new System.Drawing.Size(59, 58);
             this.btnCorreo.TabIndex = 9;
             this.btnCorreo.UseVisualStyleBackColor = true;
             this.btnCorreo.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // btnOpenWord
+            // button1
             // 
-            this.btnOpenWord.BackgroundImage = global::CotizaYA_00.Properties.Resources.open_arrow_icon;
-            this.btnOpenWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenWord.Location = new System.Drawing.Point(351, 92);
-            this.btnOpenWord.Name = "btnOpenWord";
-            this.btnOpenWord.Size = new System.Drawing.Size(37, 29);
-            this.btnOpenWord.TabIndex = 15;
-            this.btnOpenWord.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenPDF
-            // 
-            this.btnOpenPDF.BackgroundImage = global::CotizaYA_00.Properties.Resources.open_arrow_icon;
-            this.btnOpenPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenPDF.Location = new System.Drawing.Point(417, 92);
-            this.btnOpenPDF.Name = "btnOpenPDF";
-            this.btnOpenPDF.Size = new System.Drawing.Size(37, 29);
-            this.btnOpenPDF.TabIndex = 16;
-            this.btnOpenPDF.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(713, 615);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Cotizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 745);
+            this.ClientSize = new System.Drawing.Size(878, 745);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOpenPDF);
+            this.Controls.Add(this.btnAddProduct);
+            this.Controls.Add(this.btnOpenWord);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnWord);
+            this.Controls.Add(this.btnPDF);
+            this.Controls.Add(this.btnSearchProduct);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnCorreo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Cotizador";
@@ -378,6 +460,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,5 +497,12 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnOpenWord;
         private System.Windows.Forms.Button btnOpenPDF;
+        private System.Windows.Forms.Button btnSearchProduct;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.RadioButton rbtnCompra;
+        private System.Windows.Forms.RadioButton rbtnCotización;
+        private System.Windows.Forms.Button button1;
     }
 }

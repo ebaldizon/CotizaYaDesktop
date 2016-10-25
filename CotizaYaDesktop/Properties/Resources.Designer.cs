@@ -93,6 +93,16 @@ namespace CotizaYA_00.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap empresa_logo {
+            get {
+                object obj = ResourceManager.GetObject("empresa_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap open_arrow_icon {
             get {
                 object obj = ResourceManager.GetObject("open_arrow_icon", resourceCulture);
