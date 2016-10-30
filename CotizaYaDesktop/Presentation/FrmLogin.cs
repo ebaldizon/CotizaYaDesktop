@@ -16,5 +16,10 @@ namespace CotizaYA_00.Presentation
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
