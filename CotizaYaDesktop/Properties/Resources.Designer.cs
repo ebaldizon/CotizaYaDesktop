@@ -83,6 +83,16 @@ namespace CotizaYA_00.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap db_icon_1 {
+            get {
+                object obj = ResourceManager.GetObject("db_icon_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap email_send {
             get {
                 object obj = ResourceManager.GetObject("email_send", resourceCulture);
@@ -96,6 +106,16 @@ namespace CotizaYA_00.Properties {
         internal static System.Drawing.Bitmap empresa_logo {
             get {
                 object obj = ResourceManager.GetObject("empresa_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mail_icon_2 {
+            get {
+                object obj = ResourceManager.GetObject("mail_icon_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +143,16 @@ namespace CotizaYA_00.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer_icon_2 {
+            get {
+                object obj = ResourceManager.GetObject("printer_icon_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap template_icon {
             get {
                 object obj = ResourceManager.GetObject("template_icon", resourceCulture);
@@ -136,6 +166,26 @@ namespace CotizaYA_00.Properties {
         internal static System.Drawing.Bitmap Word_icon {
             get {
                 object obj = ResourceManager.GetObject("Word_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap word_icon_1 {
+            get {
+                object obj = ResourceManager.GetObject("word_icon_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap word_icon_3 {
+            get {
+                object obj = ResourceManager.GetObject("word_icon_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

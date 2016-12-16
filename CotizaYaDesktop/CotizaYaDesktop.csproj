@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\PDFAdmin.cs" />
+    <Compile Include="Data\ConnectionData.cs" />
+    <Compile Include="Data\InvoiceData.cs" />
     <Compile Include="Presentation\Cotizador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +106,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
@@ -159,6 +159,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Presentation\IMG\empresa-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\word-icon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\printer-icon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\mail-icon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\word-icon-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\db-icon-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

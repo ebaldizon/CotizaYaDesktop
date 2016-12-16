@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace CotizaYA_00
 {
-    public partial class Cotizador : Form
+    public partial class Facturación : Form
     {
         InvoiceAdmin invoiceAdmin;
         bool calculate;
 
-        public Cotizador()
+        public Facturación()
         {
             InitializeComponent();
             this.dtgwProducts.RowCount = 23;

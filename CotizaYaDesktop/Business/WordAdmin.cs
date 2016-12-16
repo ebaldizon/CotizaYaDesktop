@@ -117,14 +117,14 @@ namespace CotizaYA_00
         {
             for (int f = 0; f < 23; f++)
             {
-                for (int c = 0; c < 4; c++)
+                for (int c = 0; c < 5; c++)
                 {
                     createRefObjMatrix(f, c, ObjMiss, ObjWord, parameter);
                 }
             }
         }
 
-        //Boomarks empleados en el word, en este caso total hay 4 columnas con 23 filas cada uno
+        //Boomarks empleados en el word, en este caso total hay 4 columnas connection 23 filas cada uno
         public string getMatrixBookMark(int i, int j)
         {
             if (j == 0)
@@ -134,7 +134,9 @@ namespace CotizaYA_00
             else if (j == 2)
                 return "q" + i;
             else if (j == 3)
-                return "price" + i;
+                return "unitPrice" + i;
+            else if (j == 4)
+                return "quantityPrice" + i;
             return "";
         }
 
